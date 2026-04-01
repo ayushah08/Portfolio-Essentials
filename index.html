@@ -3,515 +3,632 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta
+    name="description"
+    content="Ayush Shah is a backend-focused developer building Java and Spring Boot applications with REST APIs, JWT authentication, and MySQL."
+  >
   <title>Ayush Shah | Backend Developer</title>
-  <style>
-.reveal {
-  opacity: 0;
-  transform: translateY(40px);
-  transition: all 0.8s ease;
-}
-
-.reveal.active {
-  opacity: 1;
-  transform: translateY(0);
-}
-</style>
   <script src="https://cdn.tailwindcss.com"></script>
-  
+  <style>
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      min-height: 100vh;
+    }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(40px);
+      transition: opacity 0.8s ease, transform 0.8s ease;
+    }
+
+    .reveal.active {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .hero-glow {
+      box-shadow: 0 0 60px rgba(59, 130, 246, 0.18);
+    }
+
+    .type-cursor::after {
+      content: "|";
+      margin-left: 0.2rem;
+      color: rgb(168 85 247);
+      animation: blink 1s steps(1) infinite;
+    }
+
+    @keyframes blink {
+      50% {
+        opacity: 0;
+      }
+    }
+  </style>
 </head>
-
-<style>
-html {
-  scroll-behavior: smooth;
-}
-</style>
-
-<body class="text-white font-sans relative overflow-x-hidden scroll-smooth">
-  <!-- NAVBAR -->
-<nav class="fixed top-0 w-full bg-black/40 backdrop-blur-lg border-b border-white/10 z-50">
-  <div class="max-w-6xl mx-auto flex justify-between items-center px-6 py-3">
-
-    <h1 class="font-semibold">Ayush Shah</h1>
-
-    <div class="flex gap-6 text-sm">
-      <a href="#about" class="hover:text-purple-400">About</a>
-      <a href="#projects" class="hover:text-purple-400">Projects</a>
-      <a href="#skills" class="hover:text-purple-400">Skills</a>
-      <a href="#contact" class="hover:text-purple-400">Contact</a>
-    </div>
-
-  </div>
-</nav>
-
-  <!-- BACKGROUND IMAGE -->
+<body class="relative overflow-x-hidden bg-slate-950 text-white font-sans">
   <div class="absolute inset-0 -z-20">
-<!-- BACKGROUND -->
-
-<!-- Desktop -->
-<img src="desktop-bg.jpeg"
-  class="hidden md:block absolute inset-0 w-full h-full object-cover opacity-20 blur-sm -z-20">
-
-<!-- Mobile -->
-<img src="mobile-bg.jpeg"
-  class="block md:hidden absolute inset-0 w-full h-full object-cover opacity-20 blur-sm -z-20">     
+    <img
+      src="desktop-bg.jpeg"
+      alt=""
+      class="hidden md:block absolute inset-0 h-full w-full object-cover opacity-20 blur-sm"
+    >
+    <img
+      src="mobile-bg.jpeg"
+      alt=""
+      class="block md:hidden absolute inset-0 h-full w-full object-cover opacity-20 blur-sm"
+    >
   </div>
 
-  <!-- DARK OVERLAY -->
-  <div class="absolute inset-0 -z-10 bg-black/70"></div>
-
-  <!-- GLOW -->
+  <div class="absolute inset-0 -z-10 bg-black/75"></div>
   <div class="absolute inset-0 -z-10">
-    <div class="absolute w-96 h-96 bg-purple-500 blur-3xl opacity-20 top-10 left-10"></div>
-    <div class="absolute w-96 h-96 bg-blue-500 blur-3xl opacity-20 bottom-10 right-10"></div>
+    <div class="absolute left-10 top-10 h-96 w-96 rounded-full bg-purple-500/20 blur-3xl"></div>
+    <div class="absolute bottom-10 right-10 h-96 w-96 rounded-full bg-blue-500/20 blur-3xl"></div>
   </div>
 
-  <!-- HERO -->
-  <section class="h-screen flex justify-center items-center px-4 mt-10">
-  <div class="bg-white/5 backdrop-blur-xl border border-white/10 p-10 rounded-3xl shadow-xl text-center max-w-2xl">
-
-    <h1 class="text-5xl md:text-6xl font-bold">Ayush Shah</h1>
-
-    <!-- MAIN LINE -->
-    <p class="mt-4 text-xl text-gray-300">
-      Building scalable backend systems with Java & Spring Boot
-    </p>
-
-    <!-- TYPING EFFECT -->
-    <p class="mt-2 text-purple-400 text-lg font-semibold">
-      <p class="mt-2 text-purple-400 text-lg font-semibold">
-  Backend Developer • Spring Boot • REST APIs
-</p>
-    </p>
-
-    <!-- BUTTONS -->
-    <div class="mt-6 flex gap-4 justify-center flex-wrap">
-      <a href="https://github.com/ayushah08" target="_blank"
-        class="px-6 py-2 bg-white/10 border border-white/20 rounded-full hover:bg-white/20 transition">
-        GitHub
-      </a>
-
-      <a href="https://www.linkedin.com/in/ayush-shah-962ab92b6" target="_blank"
-        class="px-6 py-2 bg-white/10 border border-white/20 rounded-full hover:bg-white/20 transition">
-        LinkedIn
-      </a>
-
-      <a href="Ayush_Shah_Resume.pdf" target="_blank"
-        class="px-6 py-2 bg-white/10 border border-white/20 rounded-full hover:bg-white/20 transition">
-        View Resume
-      </a>
-
-      <a href="Ayush_Shah_Resume.pdf" download
-        class="px-6 py-2 bg-gradient-to-r from-purple-500 to-blue-500 rounded-full hover:scale-105 transition">
-        Download Resume
-      </a>
-    </div>
-
-  </div>
-</section>
-
-<div class="w-24 h-[2px] bg-gradient-to-r from-purple-500 to-blue-500 mx-auto my-8 opacity-50"></div>
-
-  <section id="about" class="px-6 md:px-16 py-12 text-center reveal">
-  <h2 class="text-3xl font-bold mb-6">About Me</h2>
-
-  <div class="bg-white/5 backdrop-blur-xl border border-white/10 p-6 md:p-8 rounded-2xl max-w-3xl mx-auto">
-
-    <p class="text-gray-400 leading-relaxed text-sm md:text-base">
-      Computer Science student focused on backend development using Java and Spring Boot.
-      I build RESTful APIs and design real-world applications following clean architecture (Controller → Service → Repository).
-
-      <br><br>
-
-      Currently improving problem-solving through DSA and working on backend projects to strengthen scalability, system design, and database fundamentals.
-
-      <br><br>
-
-      Looking for opportunities to contribute, learn, and grow as a backend developer.
-    </p>
-
-  </div>
-  <div class="w-24 h-[2px] bg-gradient-to-r from-purple-500 to-blue-500 mx-auto my-8 opacity-50"></div>
-<!-- PROJECTS -->
-<section id="projects" class="px-6 md:px-16 py-12 text-center reveal">
-  <h2 class="text-3xl font-bold mb-8">Projects</h2>
-
-  <div class="grid md:grid-cols-2 gap-6">
-
-    <!-- PROJECT 1 -->
-    <div class="bg-white/5 backdrop-blur-xl border border-white/10 p-6 rounded-2xl hover:scale-105 hover:shadow-2xl transition duration-300">
-
-  <h3 class="text-xl font-semibold">FeelFree AI</h3>
-
-  <p class="text-gray-400 text-sm mt-2">
-    Full-stack AI-powered mental wellness platform with emotional support and community interaction.
-  </p>
-
-  <div class="mt-3 flex flex-wrap gap-2 justify-center text-xs">
-    <span class="bg-purple-500/20 px-3 py-1 rounded-full"> Java</span>
-    <span class="bg-green-500/20 px-3 py-1 rounded-full">Spring Boot</span>
-    <span class="bg-blue-500/20 px-3 py-1 rounded-full"> JWT</span>
-    <span class="bg-yellow-500/20 px-3 py-1 rounded-full"> MySQL</span>
-    <span class="bg-cyan-500/20 px-3 py-1 rounded-full"> React</span>
-    <span class="bg-pink-500/20 px-3 py-1 rounded-full"> Tailwind</span>
-    <span class="bg-red-500/20 px-3 py-1 rounded-full"> AI</span>
-  </div>
-
-  <p class="text-xs text-gray-500 mt-3 italic">
-    Full Stack • AI Integrated • Hackathon Project
-  </p>
-
-  <div class="mt-4 flex gap-4 justify-center">
-    <a href="https://github.com/ayushah08/feel-free_Final" target="_blank" class="text-blue-400">GitHub</a>
-    <a href="https://youtu.be/1seZ5TgyY_c" target="_blank" class="text-green-400">Demo</a>
-  </div>
-
-</div>
-
-   <div class="bg-white/5 backdrop-blur-xl border border-white/10 p-6 rounded-2xl hover:scale-105 hover:shadow-2xl transition duration-300">
-
-  <h3 class="text-xl font-semibold">Developer Social Backend</h3>
-
-  <p class="text-gray-400 text-sm mt-2">
-    Backend system for a developer-focused social platform with authentication and post management.
-  </p>
-
-  <div class="mt-3 flex flex-wrap gap-2 justify-center text-xs">
-    <span class="bg-purple-500/20 px-3 py-1 rounded-full"> Java</span>
-    <span class="bg-green-500/20 px-3 py-1 rounded-full">Spring Boot</span>
-    <span class="bg-blue-500/20 px-3 py-1 rounded-full"> JWT</span>
-    <span class="bg-yellow-500/20 px-3 py-1 rounded-full"> MySQL</span>
-    <span class="bg-indigo-500/20 px-3 py-1 rounded-full"> REST API</span>
-  </div>
-
-  <p class="text-xs text-gray-500 mt-3 italic">
-    Backend Only • API Design • Authentication System
-  </p>
-
-  <div class="mt-4 text-center">
-    <a href="https://github.com/ayushah08/SocialMedia" target="_blank" class="text-blue-400">GitHub</a>
-  </div>
-
-</div>
-
-    <!-- PROJECT 3 -->
-   <div class="md:col-span-2 bg-white/5 border border-white/10 p-6 rounded-2xl hover:scale-105 transition">
-
-  <h3 class="text-xl font-semibold">E-Commerce Full Stack (In Progress)</h3>
-
-  <p class="text-gray-400 text-sm mt-2">
-    Full-stack e-commerce platform with secure authentication, product management, and order handling.
-  </p>
-
-  <!-- TECH BADGES -->
-  <div class="mt-3 flex flex-wrap gap-2 justify-center text-xs">
-
-    <span class="bg-purple-500/20 px-3 py-1 rounded-full"> Java</span>
-    <span class="bg-green-500/20 px-3 py-1 rounded-full"> Spring Boot</span>
-    <span class="bg-blue-500/20 px-3 py-1 rounded-full"> JWT</span>
-    <span class="bg-yellow-500/20 px-3 py-1 rounded-full"> MySQL</span>
-    <span class="bg-cyan-500/20 px-3 py-1 rounded-full"> React</span>
-    <span class="bg-pink-500/20 px-3 py-1 rounded-full"> Tailwind</span>
-
-  </div>
-
-  <!-- STATUS -->
-  <p class="text-xs text-gray-500 mt-3 italic">
-    Currently building frontend and integrating APIs for real-world scalability.
-  </p>
-
-  <!-- LINK -->
-  <div class="mt-4 text-center">
-    <a href="https://github.com/ayushah08/EcommerceFullStack" target="_blank" class="text-blue-400">
-      GitHub →
-    </a>
-  </div>
-
-</div>
-</section>
-<div class="w-24 h-[2px] bg-gradient-to-r from-purple-500 to-blue-500 mx-auto my-8 opacity-50"></div>
-<!-- SKILLS (DETAILED + TECH TAGS) -->
-<section id="skills" class="px-6 md:px-16 py-12">
-  <h2 class="text-3xl font-bold mb-8 text-center">Skills</h2>
-
-  <div class="grid md:grid-cols-2 gap-6">
-
-    <!-- BACKEND -->
-    <div class="bg-white/5 backdrop-blur-xl border border-white/10 p-6 rounded-2xl text-center transform hover:scale-105 hover:-translate-y-1 hover:shadow-[0_0_25px_rgba(168,85,247,0.4)] transition duration-300">
-      <h3 class="text-xl font-semibold mb-2">Backend Development</h3>
-      <p class="text-gray-400 text-sm leading-relaxed">
-        Experienced in building scalable backend systems using Java and Spring Boot.
-        Strong understanding of REST API development, authentication using Spring Security and JWT,
-        and layered architecture (Controller → Service → Repository).
-      </p>
-
-      <div class="flex flex-wrap gap-2 mt-4">
-        <span class="border px-3 py-1 rounded-full text-xs">Java</span>
-        <span class="border px-3 py-1 rounded-full text-xs">Spring Boot</span>
-        <span class="border px-3 py-1 rounded-full text-xs">Spring Security</span>
-        <span class="border px-3 py-1 rounded-full text-xs">REST APIs</span>
-        <span class="border px-3 py-1 rounded-full text-xs">JWT</span>
+  <nav class="fixed top-0 z-50 w-full border-b border-white/10 bg-black/40 backdrop-blur-lg">
+    <div class="mx-auto flex max-w-6xl flex-wrap items-center justify-between gap-4 px-6 py-4">
+      <a href="#home" class="text-base font-semibold tracking-wide">Ayush Shah</a>
+      <div class="flex flex-wrap items-center justify-center gap-4 text-sm text-gray-200">
+        <a href="#about" class="transition hover:text-purple-300">About</a>
+        <a href="#projects" class="transition hover:text-purple-300">Projects</a>
+        <a href="#skills" class="transition hover:text-purple-300">Skills</a>
+        <a href="#contact" class="transition hover:text-purple-300">Contact</a>
       </div>
     </div>
+  </nav>
 
-    <!-- DATABASE -->
-    <div class="bg-white/5 backdrop-blur-xl border border-white/10 p-6 rounded-2xl text-center transform hover:scale-105 hover:-translate-y-1 hover:shadow-[0_0_25px_rgba(168,85,247,0.4)] transition duration-300">
-      <h3 class="text-xl font-semibold mb-2">Database & Persistence</h3>
-      <p class="text-gray-400 text-sm leading-relaxed">
-        Skilled in working with relational databases like MySQL.
-        Experience with JPA, Hibernate, and JDBC for efficient data handling,
-        along with designing structured and optimized schemas.
+  <main>
+    <section id="home" class="flex min-h-screen items-center justify-center px-4 pt-28">
+      <div class="hero-glow w-full max-w-3xl rounded-3xl border border-white/10 bg-white/5 p-8 text-center backdrop-blur-xl md:p-12">
+        <p class="text-sm uppercase tracking-[0.35em] text-purple-300">Backend Developer Portfolio</p>
+        <h1 class="mt-4 text-5xl font-bold md:text-6xl">Ayush Shah</h1>
+        <p class="mx-auto mt-5 max-w-2xl text-base leading-7 text-gray-300 md:text-lg">
+          Backend-focused developer building Java and Spring Boot applications with secure APIs,
+          layered architecture, and database-driven features.
+        </p>
+        <p class="mt-4 text-lg font-semibold text-purple-300">
+          <span id="typing" class="type-cursor">Backend Developer</span>
+        </p>
+        <p class="mx-auto mt-4 max-w-2xl text-sm leading-6 text-gray-400 md:text-base">
+          Seeking internship and entry-level opportunities where I can contribute to real products,
+          grow as a Java engineer, and keep sharpening system design fundamentals.
+        </p>
+
+        <div class="mt-8 flex flex-wrap justify-center gap-4">
+          <a
+            href="https://github.com/ayushah08"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="rounded-full border border-white/20 bg-white/10 px-6 py-2 transition hover:bg-white/20"
+          >
+            GitHub
+          </a>
+          <a
+            href="https://www.linkedin.com/in/ayush-shah-962ab92b6"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="rounded-full border border-white/20 bg-white/10 px-6 py-2 transition hover:bg-white/20"
+          >
+            LinkedIn
+          </a>
+          <a
+            href="Ayush_Shah_Resume.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="rounded-full border border-white/20 bg-white/10 px-6 py-2 transition hover:bg-white/20"
+          >
+            View Resume
+          </a>
+          <a
+            href="Ayush_Shah_Resume.pdf"
+            download
+            class="rounded-full bg-gradient-to-r from-purple-500 to-blue-500 px-6 py-2 transition hover:scale-105"
+          >
+            Download Resume
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <div class="mx-auto my-8 h-[2px] w-24 bg-gradient-to-r from-purple-500 to-blue-500 opacity-50"></div>
+
+    <section id="about" class="reveal px-6 py-12 text-center md:px-16">
+      <h2 class="mb-6 text-3xl font-bold">About Me</h2>
+      <div class="mx-auto max-w-3xl rounded-2xl border border-white/10 bg-white/5 p-6 backdrop-blur-xl md:p-8">
+        <p class="text-sm leading-7 text-gray-300 md:text-base">
+          I am a Computer Science student focused on backend development with Java and Spring Boot.
+          I enjoy building REST APIs, handling authentication, and structuring applications with a
+          clean Controller-Service-Repository architecture.
+        </p>
+        <p class="mt-4 text-sm leading-7 text-gray-400 md:text-base">
+          My current focus is strengthening problem-solving through DSA, improving database design,
+          and building projects that reflect production-minded thinking around scalability,
+          maintainability, and security.
+        </p>
+      </div>
+    </section>
+
+    <div class="mx-auto my-8 h-[2px] w-24 bg-gradient-to-r from-purple-500 to-blue-500 opacity-50"></div>
+
+    <section id="projects" class="reveal px-6 py-12 text-center md:px-16">
+      <h2 class="mb-3 text-3xl font-bold">Projects</h2>
+      <p class="mx-auto mb-8 max-w-2xl text-sm leading-6 text-gray-400 md:text-base">
+        A few projects that show how I approach backend systems, API design, authentication, and
+        full-stack integration.
       </p>
 
-      <div class="flex flex-wrap gap-2 mt-4">
-        <span class="border px-3 py-1 rounded-full text-xs">MySQL</span>
-        <span class="border px-3 py-1 rounded-full text-xs">JPA</span>
-        <span class="border px-3 py-1 rounded-full text-xs">Hibernate</span>
-        <span class="border px-3 py-1 rounded-full text-xs">JDBC</span>
+      <div class="grid gap-6 md:grid-cols-2">
+        <article class="md:col-span-2 rounded-2xl border border-white/10 bg-white/5 p-6 backdrop-blur-xl transition duration-300 hover:scale-[1.01] hover:shadow-xl">
+          <p class="mb-2 text-xs font-semibold uppercase tracking-[0.25em] text-green-400">Featured Project</p>
+          <h3 class="text-2xl font-semibold">StudHunt AI</h3>
+          <p class="mt-3 text-sm leading-6 text-gray-300">
+            AI-powered study planning platform that creates personalized learning roadmaps and helps
+            students organize goals into practical step-by-step plans.
+          </p>
+          <p class="mt-2 text-xs text-gray-500">
+            Built as a full-stack productivity product with AI-assisted planning logic and a
+            structured user workflow.
+          </p>
+          <div class="mt-4 flex flex-wrap justify-center gap-2 text-xs">
+            <span class="rounded-full bg-purple-500/20 px-3 py-1">React</span>
+            <span class="rounded-full bg-green-500/20 px-3 py-1">Spring Boot</span>
+            <span class="rounded-full bg-blue-500/20 px-3 py-1">REST API</span>
+            <span class="rounded-full bg-yellow-500/20 px-3 py-1">Database</span>
+            <span class="rounded-full bg-red-500/20 px-3 py-1">Gemini AI</span>
+          </div>
+          <p class="mt-3 text-xs italic text-gray-500">
+            Full Stack | AI Assisted | Real-world Productivity Tool
+          </p>
+          <div class="mt-5 flex flex-wrap justify-center gap-4">
+            <a
+              href="https://studhunt-ai.vercel.app/"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="rounded-full bg-green-500/20 px-5 py-2 text-green-300 transition hover:bg-green-500/30"
+            >
+              Live Demo
+            </a>
+            <a
+              href="https://github.com/ayushah08/studhunt-ai"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="rounded-full bg-white/10 px-5 py-2 text-blue-300 transition hover:bg-white/20"
+            >
+              GitHub
+            </a>
+          </div>
+        </article>
+
+        <article class="rounded-2xl border border-white/10 bg-white/5 p-6 backdrop-blur-xl transition duration-300 hover:scale-[1.02] hover:shadow-2xl">
+          <h3 class="text-xl font-semibold">FeelFree AI</h3>
+          <p class="mt-3 text-sm leading-6 text-gray-300">
+            Full-stack mental wellness platform with emotional support features, community
+            interaction, and AI-assisted user experience ideas.
+          </p>
+          <div class="mt-4 flex flex-wrap justify-center gap-2 text-xs">
+            <span class="rounded-full bg-purple-500/20 px-3 py-1">Java</span>
+            <span class="rounded-full bg-green-500/20 px-3 py-1">Spring Boot</span>
+            <span class="rounded-full bg-blue-500/20 px-3 py-1">JWT</span>
+            <span class="rounded-full bg-yellow-500/20 px-3 py-1">MySQL</span>
+            <span class="rounded-full bg-cyan-500/20 px-3 py-1">React</span>
+            <span class="rounded-full bg-pink-500/20 px-3 py-1">Tailwind</span>
+            <span class="rounded-full bg-red-500/20 px-3 py-1">AI</span>
+          </div>
+          <p class="mt-3 text-xs italic text-gray-500">
+            Full Stack | AI Integrated | Hackathon Project
+          </p>
+          <div class="mt-4 flex justify-center gap-4">
+            <a
+              href="https://github.com/ayushah08/feel-free_Final"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="text-blue-300 transition hover:text-blue-200"
+            >
+              GitHub
+            </a>
+            <a
+              href="https://youtu.be/1seZ5TgyY_c"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="text-green-300 transition hover:text-green-200"
+            >
+              Demo
+            </a>
+          </div>
+        </article>
+
+        <article class="rounded-2xl border border-white/10 bg-white/5 p-6 backdrop-blur-xl transition duration-300 hover:scale-[1.02] hover:shadow-2xl">
+          <h3 class="text-xl font-semibold">Developer Social Backend</h3>
+          <p class="mt-3 text-sm leading-6 text-gray-300">
+            Backend system for a developer-focused social platform with authentication, post
+            management, and REST endpoints for core user flows.
+          </p>
+          <div class="mt-4 flex flex-wrap justify-center gap-2 text-xs">
+            <span class="rounded-full bg-purple-500/20 px-3 py-1">Java</span>
+            <span class="rounded-full bg-green-500/20 px-3 py-1">Spring Boot</span>
+            <span class="rounded-full bg-blue-500/20 px-3 py-1">JWT</span>
+            <span class="rounded-full bg-yellow-500/20 px-3 py-1">MySQL</span>
+            <span class="rounded-full bg-indigo-500/20 px-3 py-1">REST API</span>
+          </div>
+          <p class="mt-3 text-xs italic text-gray-500">
+            Backend Only | API Design | Authentication System
+          </p>
+          <div class="mt-4 text-center">
+            <a
+              href="https://github.com/ayushah08/SocialMedia"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="text-blue-300 transition hover:text-blue-200"
+            >
+              GitHub
+            </a>
+          </div>
+        </article>
+
+        <article class="md:col-span-2 rounded-2xl border border-white/10 bg-white/5 p-6 backdrop-blur-xl transition duration-300 hover:scale-[1.01] hover:shadow-xl">
+          <h3 class="text-xl font-semibold">E-Commerce Full Stack</h3>
+          <p class="mt-3 text-sm leading-6 text-gray-300">
+            Ongoing e-commerce application with secure authentication, product management, and order
+            handling designed to reflect real-world full-stack architecture.
+          </p>
+          <div class="mt-4 flex flex-wrap justify-center gap-2 text-xs">
+            <span class="rounded-full bg-purple-500/20 px-3 py-1">Java</span>
+            <span class="rounded-full bg-green-500/20 px-3 py-1">Spring Boot</span>
+            <span class="rounded-full bg-blue-500/20 px-3 py-1">JWT</span>
+            <span class="rounded-full bg-yellow-500/20 px-3 py-1">MySQL</span>
+            <span class="rounded-full bg-cyan-500/20 px-3 py-1">React</span>
+            <span class="rounded-full bg-pink-500/20 px-3 py-1">Tailwind</span>
+          </div>
+          <p class="mt-3 text-xs italic text-gray-500">
+            In Progress | Full Stack | Scalability-focused Build
+          </p>
+          <div class="mt-4 text-center">
+            <a
+              href="https://github.com/ayushah08/EcommerceFullStack"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="text-blue-300 transition hover:text-blue-200"
+            >
+              GitHub
+            </a>
+          </div>
+        </article>
       </div>
-    </div>
+    </section>
 
-    <!-- TOOLS -->
-    <div class="bg-white/5 backdrop-blur-xl border border-white/10 p-6 rounded-2xl text-center transform hover:scale-105 hover:-translate-y-1 hover:shadow-[0_0_25px_rgba(168,85,247,0.4)] transition duration-300">
-      <h3 class="text-xl font-semibold mb-2">Tools & Workflow</h3>
-      <p class="text-gray-400 text-sm leading-relaxed">
-        Comfortable with modern development tools and workflow.
-        Focused on version control, API testing, and efficient project management.
-      </p>
+    <div class="mx-auto my-8 h-[2px] w-24 bg-gradient-to-r from-purple-500 to-blue-500 opacity-50"></div>
 
-      <div class="flex flex-wrap gap-2 mt-4">
-        <span class="border px-3 py-1 rounded-full text-xs">Git</span>
-        <span class="border px-3 py-1 rounded-full text-xs">GitHub</span>
-        <span class="border px-3 py-1 rounded-full text-xs">Postman</span>
-        <span class="border px-3 py-1 rounded-full text-xs">Maven</span>
-        <span class="border px-3 py-1 rounded-full text-xs">VS Code</span>
-        <span class="border px-3 py-1 rounded-full text-xs">Eclipse</span>
+    <section id="skills" class="px-6 py-12 md:px-16">
+      <h2 class="mb-8 text-center text-3xl font-bold">Skills</h2>
+
+      <div class="grid gap-6 md:grid-cols-2">
+        <article class="rounded-2xl border border-white/10 bg-white/5 p-6 text-center transition duration-300 hover:-translate-y-1 hover:scale-[1.02] hover:shadow-[0_0_25px_rgba(168,85,247,0.35)]">
+          <h3 class="mb-2 text-xl font-semibold">Backend Development</h3>
+          <p class="text-sm leading-7 text-gray-300">
+            Comfortable building backend systems in Java and Spring Boot with a focus on REST APIs,
+            authentication, layered architecture, and maintainable code structure.
+          </p>
+          <div class="mt-4 flex flex-wrap gap-2">
+            <span class="rounded-full border px-3 py-1 text-xs">Java</span>
+            <span class="rounded-full border px-3 py-1 text-xs">Spring Boot</span>
+            <span class="rounded-full border px-3 py-1 text-xs">Spring Security</span>
+            <span class="rounded-full border px-3 py-1 text-xs">REST APIs</span>
+            <span class="rounded-full border px-3 py-1 text-xs">JWT</span>
+          </div>
+        </article>
+
+        <article class="rounded-2xl border border-white/10 bg-white/5 p-6 text-center transition duration-300 hover:-translate-y-1 hover:scale-[1.02] hover:shadow-[0_0_25px_rgba(168,85,247,0.35)]">
+          <h3 class="mb-2 text-xl font-semibold">Database and Persistence</h3>
+          <p class="text-sm leading-7 text-gray-300">
+            Experience working with relational databases and persistence layers using MySQL, JPA,
+            Hibernate, and JDBC to manage application data efficiently.
+          </p>
+          <div class="mt-4 flex flex-wrap gap-2">
+            <span class="rounded-full border px-3 py-1 text-xs">MySQL</span>
+            <span class="rounded-full border px-3 py-1 text-xs">JPA</span>
+            <span class="rounded-full border px-3 py-1 text-xs">Hibernate</span>
+            <span class="rounded-full border px-3 py-1 text-xs">JDBC</span>
+          </div>
+        </article>
+
+        <article class="rounded-2xl border border-white/10 bg-white/5 p-6 text-center transition duration-300 hover:-translate-y-1 hover:scale-[1.02] hover:shadow-[0_0_25px_rgba(168,85,247,0.35)]">
+          <h3 class="mb-2 text-xl font-semibold">Tools and Workflow</h3>
+          <p class="text-sm leading-7 text-gray-300">
+            I use Git-based workflows, API testing tools, and standard Java tooling to build,
+            debug, and iterate on projects efficiently.
+          </p>
+          <div class="mt-4 flex flex-wrap gap-2">
+            <span class="rounded-full border px-3 py-1 text-xs">Git</span>
+            <span class="rounded-full border px-3 py-1 text-xs">GitHub</span>
+            <span class="rounded-full border px-3 py-1 text-xs">Postman</span>
+            <span class="rounded-full border px-3 py-1 text-xs">Maven</span>
+            <span class="rounded-full border px-3 py-1 text-xs">VS Code</span>
+            <span class="rounded-full border px-3 py-1 text-xs">Eclipse</span>
+          </div>
+        </article>
+
+        <article class="rounded-2xl border border-white/10 bg-white/5 p-6 text-center transition duration-300 hover:-translate-y-1 hover:scale-[1.02] hover:shadow-[0_0_25px_rgba(168,85,247,0.35)]">
+          <h3 class="mb-2 text-xl font-semibold">Frontend Basics</h3>
+          <p class="text-sm leading-7 text-gray-300">
+            Familiar with HTML, CSS, JavaScript, React, and Tailwind for building simple interfaces
+            and connecting frontend experiences with backend services.
+          </p>
+          <div class="mt-4 flex flex-wrap gap-2">
+            <span class="rounded-full border px-3 py-1 text-xs">HTML</span>
+            <span class="rounded-full border px-3 py-1 text-xs">CSS</span>
+            <span class="rounded-full border px-3 py-1 text-xs">JavaScript</span>
+            <span class="rounded-full border px-3 py-1 text-xs">React</span>
+            <span class="rounded-full border px-3 py-1 text-xs">Tailwind</span>
+          </div>
+        </article>
       </div>
-    </div>
+    </section>
 
-    <!-- FRONTEND -->
-    <div class="bg-white/5 backdrop-blur-xl border border-white/10 p-6 rounded-2xl text-center transform hover:scale-105 hover:-translate-y-1 hover:shadow-[0_0_25px_rgba(168,85,247,0.4)] transition duration-300">
-      <h3 class="text-xl font-semibold mb-2">Frontend Basics</h3>
-<p class="text-gray-400 text-sm leading-relaxed">        Basic knowledge of HTML, CSS, and JavaScript to build simple interfaces
-        and integrate frontend with backend services when required.
-      </p>
+    <div class="mx-auto my-8 h-[2px] w-24 bg-gradient-to-r from-purple-500 to-blue-500 opacity-50"></div>
 
-      <div class="flex flex-wrap gap-2 mt-4">
-        <span class="border px-3 py-1 rounded-full text-xs">HTML</span>
-        <span class="border px-3 py-1 rounded-full text-xs">CSS</span>
-        <span class="border px-3 py-1 rounded-full text-xs">JavaScript</span>
+    <section id="contact" class="reveal px-6 py-12 md:px-16">
+      <h2 class="mb-6 text-center text-3xl font-bold">Contact</h2>
+      <div class="mx-auto grid max-w-5xl gap-6 md:grid-cols-[1fr,1.2fr]">
+        <article class="rounded-2xl border border-white/10 bg-white/5 p-6 backdrop-blur-xl">
+          <h3 class="text-xl font-semibold">Let's Connect</h3>
+          <p class="mt-3 text-sm leading-7 text-gray-300">
+            If you have an internship opportunity, collaboration idea, or just want to talk about
+            backend development, I would be happy to connect.
+          </p>
+          <div class="mt-6 space-y-3 text-sm text-gray-300">
+            <p>Email: ayushah810@gmail.com</p>
+            <p>
+              WhatsApp:
+              <a
+                href="https://wa.me/919309566952"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="text-green-300 hover:underline"
+              >
+                +91 9309566952
+              </a>
+            </p>
+            <p>
+              LinkedIn:
+              <a
+                href="https://www.linkedin.com/in/ayush-shah-962ab92b6"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="text-blue-300 hover:underline"
+              >
+                View Profile
+              </a>
+            </p>
+            <p>
+              GitHub:
+              <a
+                href="https://github.com/ayushah08"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="text-blue-300 hover:underline"
+              >
+                ayushah08
+              </a>
+            </p>
+          </div>
+        </article>
+
+        <article class="rounded-2xl border border-white/10 bg-white/5 p-6 backdrop-blur-xl">
+          <h3 class="text-xl font-semibold">Quick Message</h3>
+          <p class="mt-3 text-sm leading-7 text-gray-400">
+            Fill this out and choose whether you want to reach out through WhatsApp or email.
+          </p>
+
+          <div id="form-status" class="mt-4 hidden rounded-xl border border-red-400/30 bg-red-500/10 px-4 py-3 text-sm text-red-200"></div>
+
+          <div class="mt-4 space-y-3">
+            <input
+              id="name"
+              type="text"
+              placeholder="Your Name"
+              class="w-full rounded-xl border border-white/20 bg-white/10 p-3 text-white outline-none transition focus:border-purple-400"
+            >
+            <input
+              id="email"
+              type="email"
+              placeholder="Your Email"
+              class="w-full rounded-xl border border-white/20 bg-white/10 p-3 text-white outline-none transition focus:border-purple-400"
+            >
+            <select
+              id="purpose"
+              class="w-full rounded-xl border border-white/20 bg-slate-900/80 p-3 text-white outline-none transition focus:border-purple-400"
+            >
+              <option>Hiring Opportunity</option>
+              <option>Collaboration</option>
+              <option>Project Inquiry</option>
+              <option>Just Saying Hi</option>
+              <option>Prefer not to say</option>
+            </select>
+            <textarea
+              id="message"
+              rows="5"
+              class="w-full rounded-xl border border-white/20 bg-white/10 p-3 text-white outline-none transition focus:border-purple-400"
+              placeholder="Tell me a little about why you're reaching out."
+            ></textarea>
+          </div>
+
+          <div class="mt-5 flex flex-wrap gap-3">
+            <button
+              type="button"
+              onclick="sendToWhatsApp()"
+              class="rounded-full border border-white/20 bg-white/10 px-6 py-2 transition hover:bg-white/20"
+            >
+              WhatsApp
+            </button>
+            <button
+              type="button"
+              onclick="sendEmail()"
+              class="rounded-full border border-white/20 bg-white/10 px-6 py-2 transition hover:bg-white/20"
+            >
+              Email
+            </button>
+          </div>
+
+          <p class="mt-4 text-sm text-gray-400">
+            I usually reply quickly when the message includes your name, email, and project context.
+          </p>
+        </article>
       </div>
-    </div>
+    </section>
+  </main>
 
-  </div>
-</section>
-<div class="w-24 h-[2px] bg-gradient-to-r from-purple-500 to-blue-500 mx-auto my-8 opacity-50"></div>
-  
-<section id="contact" class="px-6 md:px-16 py-12 text-center reveal">
-  <h2 class="text-3xl font-bold mb-6">Contact</h2>
-
-  <div class="bg-white/5 backdrop-blur-xl border border-white/10 p-6 rounded-2xl max-w-xl mx-auto">
-
-    <p class="text-gray-300 mb-2">📧 ayushah810@gmail.com</p>
-
-    <p class="text-gray-300 mb-2">
-      💬 WhatsApp: 
-      <a href="https://wa.me/919309566952" target="_blank" class="text-green-400 hover:underline">
-        +91 9309566952
-      </a>
+  <footer class="mt-10 border-t border-white/10 py-6 text-center text-sm text-gray-400">
+    <p>Copyright 2026 Ayush Shah. Built with a backend engineer's mindset.</p>
+    <p class="mt-3 text-gray-500">
+      Portfolio views: <span id="views">Loading...</span>
     </p>
+  </footer>
 
-    <p class="text-gray-300 mb-2">
-      💼 LinkedIn: 
-      <a href="https://www.linkedin.com/in/ayush-shah-962ab92b6" target="_blank" class="text-blue-400 hover:underline">
-        View Profile
-      </a>
-    </p>
+  <script>
+    const words = ["Backend Developer", "Spring Boot Developer", "API Builder"];
+    const typingEl = document.getElementById("typing");
+    let wordIndex = 0;
+    let letterIndex = 0;
+    let isDeleting = false;
 
-    <p class="text-gray-300">
-      💻 GitHub: 
-      <a href="https://github.com/ayushah08" target="_blank" class="text-blue-400 hover:underline">
-        ayushah08
-      </a>
-    </p>
+    function type() {
+      if (!typingEl) {
+        return;
+      }
 
-  </div>
-</section>
-<div class="w-24 h-[2px] bg-gradient-to-r from-purple-500 to-blue-500 mx-auto my-8 opacity-50"></div>
-<!-- FINAL CONTACT SECTION -->
-<section class="px-6 md:px-16 py-12 text-center reveal">
-  <h2 class="text-3xl font-bold mb-6">Contact Me</h2>
+      const currentWord = words[wordIndex];
+      typingEl.textContent = currentWord.substring(0, letterIndex);
 
-  <div class="bg-white/5 backdrop-blur-xl border border-white/10 p-6 rounded-2xl max-w-xl mx-auto">
+      if (!isDeleting && letterIndex < currentWord.length) {
+        letterIndex += 1;
+      } else if (isDeleting && letterIndex > 0) {
+        letterIndex -= 1;
+      } else {
+        isDeleting = !isDeleting;
+        if (!isDeleting) {
+          wordIndex = (wordIndex + 1) % words.length;
+        }
+        setTimeout(type, 1100);
+        return;
+      }
 
-    <!-- INPUTS -->
-    <input id="name" type="text" placeholder="Your Name"
-      class="w-full mb-3 p-3 rounded bg-white/10 border border-white/20 text-white outline-none">
-
-    <input id="email" type="email" placeholder="Your Email"
-      class="w-full mb-3 p-3 rounded bg-white/10 border border-white/20 text-white outline-none">
-
-    <!-- DROPDOWN -->
-    <select id="purpose"
-      class="w-full mb-3 p-3 rounded bg-white/5 backdrop-blur-xl text-white border border-white/10 outline-none">
-      <option class="bg-gray-900 text-white">Hiring Opportunity</option>
-      <option class="bg-gray-900 text-white">Collaboration</option>
-      <option class="bg-gray-900 text-white">Project Inquiry</option>
-      <option class="bg-gray-900 text-white">Just Saying Hi 😄</option>
-      <option class="bg-gray-900 text-white">Prefer not to say</option>
-    </select>
-
-    <!-- MESSAGE -->
-    <textarea id="message"
-      class="w-full mb-4 p-3 rounded bg-white/10 border border-white/20 text-white outline-none"></textarea>
-
-    <!-- BUTTONS -->
-    <div class="px-6 py-2 bg-white/10 border border-white/20 rounded-full hover:bg-white/20 hover:scale-105 transition duration-300">
-
-      <button onclick="sendToWhatsApp()"
-       class="px-6 py-2 bg-white/10 border border-white/20 rounded-full hover:bg-white/20 hover:scale-105 transition duration-300">
-        WhatsApp
-      </button>
-
-      <button onclick="sendEmail()"
-       class="px-6 py-2 bg-white/10 border border-white/20 rounded-full hover:bg-white/20 hover:scale-105 transition duration-300">
-        Email
-      </button>
-
-    </div>
-
-    <p class="text-gray-400 mt-3 text-sm">
-      Choose your preferred way — I usually respond quickly 🚀
-    </p>
-
-  </div>
-</section>
-
-<!-- JS -->
-<script>
-function sendToWhatsApp() {
-  let name = document.getElementById("name").value.trim();
-  let email = document.getElementById("email").value.trim();
-  let message = document.getElementById("message").value.trim();
-  let purpose = document.getElementById("purpose").value;
-
-  let time = new Date().toLocaleString();
-
-  let text = 
-`🚀 New Portfolio Message
-
-👤 Name: ${name}
-📧 Email: ${email}
-🎯 Purpose: ${purpose}
-
-💬 Message:
-${message}
-
-🕒 ${time}
-
---- Sent via Portfolio ---`;
-
-  window.open(`https://wa.me/919309566952?text=${encodeURIComponent(text)}`, "_blank");
-}
-
-function sendEmail() {
-  let name = document.getElementById("name").value.trim();
-  let email = document.getElementById("email").value.trim();
-  let message = document.getElementById("message").value.trim();
-  let purpose = document.getElementById("purpose").value;
-
-  let body = `Name: ${name}
-Email: ${email}
-Purpose: ${purpose}
-
-Message:
-${message}`;
-
-  window.location.href =
-    `mailto:ayushah810@gmail.com?subject=Portfolio Contact&body=${encodeURIComponent(body)}`;
-}
-
-/* TYPING EFFECT */
-const exampleText = "Hey Ayush, I really liked your portfolio. Let's connect!";
-let i = 0;
-
-function typeEffect() {
-  const textarea = document.getElementById("message");
-
-  if (textarea && textarea.value.length === 0) {
-    if (i < exampleText.length) {
-      textarea.setAttribute("placeholder", exampleText.substring(0, i + 1));
-      i++;
-      setTimeout(typeEffect, 40);
+      setTimeout(type, isDeleting ? 45 : 90);
     }
-  }
-}
 
-window.addEventListener("load", () => {
-  typeEffect();
-  type();
-  revealOnScroll();
-});
-</script>
+    function revealOnScroll() {
+      const reveals = document.querySelectorAll(".reveal");
 
-<script>
-function revealOnScroll() {
-  const reveals = document.querySelectorAll(".reveal");
+      reveals.forEach((el) => {
+        const windowHeight = window.innerHeight;
+        const elementTop = el.getBoundingClientRect().top;
 
-  reveals.forEach((el) => {
-    const windowHeight = window.innerHeight;
-    const elementTop = el.getBoundingClientRect().top;
-
-    if (elementTop < windowHeight - 100) {
-      el.classList.add("active");
+        if (elementTop < windowHeight - 100) {
+          el.classList.add("active");
+        }
+      });
     }
-  });
-}
 
-window.addEventListener("scroll", revealOnScroll);
-window.addEventListener("load", revealOnScroll);
-</script>
+    function getFormValues() {
+      return {
+        name: document.getElementById("name").value.trim(),
+        email: document.getElementById("email").value.trim(),
+        purpose: document.getElementById("purpose").value.trim(),
+        message: document.getElementById("message").value.trim()
+      };
+    }
 
-<script>
-const words = ["Backend Developer", "Spring Boot Developer", "API Builder"];
-let placeholder = 0, j = 0, current = "", isDeleting = false;
+    function setFormStatus(message) {
+      const statusEl = document.getElementById("form-status");
 
-function type() {
-  const speed = isDeleting ? 40 : 80;
+      if (!statusEl) {
+        return;
+      }
 
-  current = words[placeholder].substring(0, j);
-  document.getElementById("typing").innerHTML = current;
+      if (!message) {
+        statusEl.textContent = "";
+        statusEl.classList.add("hidden");
+        return;
+      }
 
-  if (!isDeleting && j < words[placeholder].length) {
-    j++;
-  } else if (isDeleting && j > 0) {
-    j--;
-  } else {
-    isDeleting = !isDeleting;
-    if (!isDeleting) placeholder = (placeholder + 1) % words.length;
+      statusEl.textContent = message;
+      statusEl.classList.remove("hidden");
+    }
 
-    setTimeout(type, 1200); // 🔥 pause after full word
-    return;
-  }
+    function validateForm() {
+      const { name, email, message } = getFormValues();
+      const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
-  setTimeout(type, speed);
-}
+      if (!name || !email || !message) {
+        setFormStatus("Please add your name, email, and a short message before sending.");
+        return false;
+      }
 
-window.addEventListener("load", type);
-</script>
+      if (!emailPattern.test(email)) {
+        setFormStatus("Please enter a valid email address.");
+        return false;
+      }
 
-<footer class="text-center py-6 text-gray-500 text-sm border-t border-white/10 mt-10">
-  © 2026 Ayush Shah — Built with Java mindset 
-  <p class="text-gray-400 text-sm mt-4">
-    <span id="views">Loading...</span>
-</p>
+      setFormStatus("");
+      return true;
+    }
 
-<script>
-fetch("https://api.countapi.xyz/hit/ayush-portfolio/views")
-  .then(res => res.json())
-  .then(data => {
-    document.getElementById("views").innerText = data.value;
-  });
-</script>
-</footer>
+    function sendToWhatsApp() {
+      if (!validateForm()) {
+        return;
+      }
+
+      const { name, email, purpose, message } = getFormValues();
+      const text =
+        "New Portfolio Message%0A%0A" +
+        "Name: " + encodeURIComponent(name) + "%0A" +
+        "Email: " + encodeURIComponent(email) + "%0A" +
+        "Purpose: " + encodeURIComponent(purpose) + "%0A%0A" +
+        "Message:%0A" + encodeURIComponent(message);
+
+      window.open("https://wa.me/919309566952?text=" + text, "_blank");
+    }
+
+    function sendEmail() {
+      if (!validateForm()) {
+        return;
+      }
+
+      const { name, email, purpose, message } = getFormValues();
+      const body =
+        "Name: " + name + "\n" +
+        "Email: " + email + "\n" +
+        "Purpose: " + purpose + "\n\n" +
+        "Message:\n" + message;
+
+      window.location.href =
+        "mailto:ayushah810@gmail.com?subject=" +
+        encodeURIComponent("Portfolio Contact") +
+        "&body=" +
+        encodeURIComponent(body);
+    }
+
+    fetch("https://api.countapi.xyz/hit/ayush-portfolio/views")
+      .then((res) => res.json())
+      .then((data) => {
+        const viewsEl = document.getElementById("views");
+        if (viewsEl && typeof data.value !== "undefined") {
+          viewsEl.textContent = data.value;
+        }
+      })
+      .catch(() => {
+        const viewsEl = document.getElementById("views");
+        if (viewsEl) {
+          viewsEl.textContent = "Unavailable right now";
+        }
+      });
+
+    window.addEventListener("scroll", revealOnScroll);
+    window.addEventListener("load", () => {
+      type();
+      revealOnScroll();
+    });
+  </script>
 </body>
 </html>
