@@ -13,34 +13,58 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
   <style>
-    :root {
-      color-scheme: dark;
-      --bg: #0b0e14;
-      --panel: #111620;
-      --panel-2: #151c28;
-      --line: #273140;
-      --text: #edf2fa;
-      --muted: #9aa7b8;
-      --green: #8be28b;
-      --blue: #7db7ff;
-      --purple: #c4a1ff;
-      --orange: #ffbf7a;
-      --red: #ff7f8b;
-      --radius: 18px;
-      --mono: "DM Mono", Consolas, monospace;
-      --sans: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-    }
+
+:root {
+  color-scheme: dark;
+
+  /* IntelliJ Darcula-inspired editor palette */
+  --bg: #1e1f22;
+  --panel: #25262a;
+  --panel-2: #2b2d30;
+  --line: #3c3f41;
+
+  --text: #dfe1e5;
+  --muted: #a0a4ad;
+
+  /* Code syntax colors */
+  --green: #6aab73;
+  --blue: #589df6;
+  --purple: #c77dbb;
+  --orange: #cf8e6d;
+  --red: #e06c75;
+
+  --radius: 14px;
+  --mono: "DM Mono", Consolas, monospace;
+  --sans: Inter, system-ui, -apple-system,
+          BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
     * { box-sizing: border-box; }
     html { scroll-behavior: smooth; scroll-padding-top: 88px; }
     body {
       margin: 0; background: var(--bg); color: var(--text); font-family: var(--sans);
       line-height: 1.65; -webkit-font-smoothing: antialiased;
     }
-    body::before {
-      content: ""; position: fixed; inset: 0; pointer-events: none; z-index: -1;
-      background: radial-gradient(ellipse at 18% 0%, rgba(65,119,190,.14), transparent 38%),
-                  radial-gradient(ellipse at 88% 22%, rgba(131,91,190,.10), transparent 34%);
-    }
+  
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: -1;
+  background:
+    radial-gradient(
+      ellipse at 15% 0%,
+      rgba(88, 157, 246, 0.07),
+      transparent 42%
+    ),
+    radial-gradient(
+      ellipse at 90% 30%,
+      rgba(199, 125, 187, 0.045),
+      transparent 38%
+    );
+}
+
     a { color: inherit; text-decoration: none; }
     button, a { -webkit-tap-highlight-color: transparent; }
     button { font: inherit; }
@@ -60,13 +84,394 @@
     .nav-links { display: flex; gap: 25px; align-items: center; font-size: .88rem; color: var(--muted); }
     .nav-links a:hover { color: var(--text); }
     .nav-cta { border: 1px solid #3a4c42; color: var(--green) !important; border-radius: 9px; padding: 8px 12px; }
-    .hero { padding: 68px 0 76px; min-height: calc(100vh - 70px); display: flex; align-items: center; }
-    .hero-grid { display: grid; grid-template-columns: minmax(0, 1fr); gap: 38px; align-items: center; width: 100%; }
-    .hero-copy { max-width: 850px; }
-    .hero-copy h1 { font-size: clamp(2.65rem, 6.2vw, 5.2rem); letter-spacing: -.075em; line-height: .99; margin: 18px 0 22px; }
-    .hero-copy h1 span { color: var(--green); }
-    .hero-copy > p { color: var(--muted); font-size: 1.05rem; max-width: 580px; }
-    .hero-actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 28px; }
+   
+/* Redesigned hero: centered introduction + social links */
+.hero {
+  padding: 68px 0 76px;
+  min-height: calc(100vh - 70px);
+  display: flex;
+  align-items: center;
+}
+
+
+.hero {
+  padding: 55px 0 70px;
+  min-height: calc(100vh - 70px);
+  display: flex;
+  align-items: center;
+}
+
+.hero-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.25fr) minmax(290px, 0.75fr);
+  gap: clamp(35px, 6vw, 85px);
+  align-items: center;
+  width: 100%;
+}
+
+.hero-copy {
+  max-width: 760px;
+  min-width: 0;
+}
+
+.hero-copy h1 {
+  font-size: clamp(2.8rem, 5.3vw, 5rem);
+  letter-spacing: -.075em;
+  line-height: 1.02;
+  margin: 18px 0 22px;
+}
+
+.hero-copy > p {
+  color: var(--muted);
+  font-size: 1.02rem;
+  max-width: 570px;
+}
+
+.social-panel {
+  padding: 24px;
+  background: #25262a;
+  border: 1px solid #3c3f41;
+  border-radius: 14px;
+  box-shadow: 0 18px 50px rgba(0, 0, 0, .2);
+}
+
+.social-panel-header {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  padding-bottom: 18px;
+  border-bottom: 1px solid var(--line);
+  margin-bottom: 18px;
+}
+
+.social-panel-header h2 {
+  font: 500 .88rem var(--mono);
+  margin: 0;
+  color: var(--text);
+}
+
+.terminal-dots {
+  display: flex;
+  gap: 5px;
+}
+
+.terminal-dots i {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #e06c75;
+}
+
+.terminal-dots i:nth-child(2) {
+  background: #cf8e6d;
+}
+
+.terminal-dots i:nth-child(3) {
+  background: #6aab73;
+}
+
+.social-panel-label {
+  color: var(--muted);
+  font: .7rem var(--mono);
+  margin-bottom: 12px;
+}
+
+.social-links {
+  display: grid;
+  gap: 11px;
+}
+
+.social-link {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 13px;
+  min-width: 0;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  background: #1e1f22;
+  transition: border-color .2s, transform .2s,
+              background .2s;
+}
+
+.social-link:hover {
+  border-color: var(--blue);
+  background: #292c32;
+  transform: translateY(-2px);
+}
+
+.social-icon {
+  width: 40px;
+  height: 40px;
+  flex: 0 0 40px;
+  display: grid;
+  place-items: center;
+  border-radius: 9px;
+  background: #2b2d30;
+  color: var(--blue);
+}
+
+.social-icon svg {
+  width: 22px;
+  height: 22px;
+  display: block;
+}
+
+.social-link-text {
+  min-width: 0;
+  flex: 1;
+}
+
+.social-link-text strong {
+  display: block;
+  color: var(--text);
+  font-size: .85rem;
+  font-weight: 600;
+}
+
+.social-link-text span {
+  display: block;
+  color: var(--muted);
+  font: .69rem var(--mono);
+  overflow-wrap: anywhere;
+  margin-top: 3px;
+}
+
+.social-arrow {
+  color: var(--muted);
+  font-size: 1rem;
+}
+
+.social-terminal-note {
+  margin: 17px 0 0;
+  color: #7f8792;
+  font: .68rem/1.7 var(--mono);
+}
+
+.social-terminal-note span {
+  color: var(--green);
+}
+
+@media (max-width: 900px) {
+  .hero-grid {
+    grid-template-columns: 1fr;
+    gap: 35px;
+  }
+
+  .hero {
+    min-height: auto;
+    padding-top: 60px;
+  }
+
+  .social-panel {
+    max-width: 650px;
+    width: 100%;
+  }
+}
+
+@media (max-width: 640px) {
+  .hero {
+    padding: 45px 0 55px;
+  }
+
+  .hero-copy h1 {
+    font-size: clamp(2.7rem, 11vw, 4rem);
+  }
+
+  .social-panel {
+    padding: 17px;
+  }
+}
+
+
+.hero-copy .eyebrow {
+  line-height: 1.8;
+}
+
+.hero-copy h1 {
+  font-size: clamp(2.65rem, 5.3vw, 4.8rem);
+  letter-spacing: -.075em;
+  line-height: 1.04;
+  margin: 22px 0;
+}
+
+.hero-copy > p {
+  color: var(--muted);
+  font-size: 1.02rem;
+  max-width: 580px;
+  margin: 0 auto;
+}
+
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 28px;
+}
+
+.micro-proof {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 17px;
+  margin-top: 30px;
+  color: var(--muted);
+  font: .78rem var(--mono);
+}
+
+.scroll-hint {
+  margin-top: 22px;
+  font: .72rem var(--mono);
+  color: #6f7b8c;
+}
+
+/* Social links panel */
+.hero-socials {
+  display: grid;
+  gap: 14px;
+  width: 100%;
+  max-width: 350px;
+  justify-self: center;
+}
+
+.social-heading {
+  margin-bottom: 5px;
+}
+
+.social-heading .eyebrow {
+  font-size: .7rem;
+}
+
+.social-heading h2 {
+  font-size: 1.5rem;
+  line-height: 1.25;
+  letter-spacing: -.04em;
+  margin: 10px 0 8px;
+}
+
+.social-heading p {
+  font-size: .85rem;
+  color: var(--muted);
+  margin: 0 0 8px;
+}
+
+.social-card {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  padding: 16px;
+  min-width: 0;
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  background: linear-gradient(
+    145deg,
+    rgba(21, 28, 40, .94),
+    rgba(14, 18, 26, .94)
+  );
+  transition: transform .2s ease, border-color .2s ease,
+              background .2s ease;
+}
+
+.social-card:hover {
+  transform: translateY(-3px);
+  border-color: #526b5b;
+  background: rgba(139, 226, 139, .045);
+}
+
+.social-icon {
+  width: 45px;
+  height: 45px;
+  flex: 0 0 45px;
+  display: grid;
+  place-items: center;
+  border: 1px solid #344154;
+  border-radius: 12px;
+  background: #18212d;
+  color: var(--green);
+}
+
+.social-icon svg {
+  width: 23px;
+  height: 23px;
+  display: block;
+}
+
+.social-info {
+  min-width: 0;
+  flex: 1;
+}
+
+.social-info strong {
+  display: block;
+  font-size: .91rem;
+  color: var(--text);
+}
+
+.social-info span {
+  display: block;
+  margin-top: 2px;
+  color: var(--muted);
+  font-size: .75rem;
+  overflow-wrap: anywhere;
+}
+
+.social-arrow {
+  color: var(--green);
+  font-size: 1rem;
+  align-self: flex-start;
+}
+
+@media (max-width: 900px) {
+  .hero {
+    min-height: auto;
+    padding: 70px 0 65px;
+  }
+
+  .hero-grid {
+    grid-template-columns: 1fr;
+    gap: 42px;
+  }
+
+  .hero-copy {
+    max-width: 740px;
+  }
+
+  .hero-copy h1 {
+    font-size: clamp(2.7rem, 8vw, 4.8rem);
+  }
+
+  .hero-socials {
+    max-width: 520px;
+  }
+
+  .social-heading {
+    text-align: center;
+  }
+}
+
+@media (max-width: 640px) {
+  .hero {
+    padding: 48px 0 55px;
+  }
+
+  .hero-copy h1 {
+    font-size: clamp(2.5rem, 11vw, 4rem);
+  }
+
+  .hero-copy > p {
+    font-size: .96rem;
+  }
+
+  .hero-socials {
+    max-width: 100%;
+  }
+
+  .social-card {
+    padding: 13px;
+  }
+}
+
     .btn { display: inline-flex; align-items: center; justify-content: center; gap: 9px; border-radius: 10px; padding: 12px 17px; font-weight: 700; font-size: .9rem; border: 1px solid var(--line); cursor: pointer; transition: transform .2s, border-color .2s, background .2s; min-height: 44px; }
     .btn:hover { transform: translateY(-2px); }
     .btn-primary { background: var(--green); border-color: var(--green); color: #09120b; }
@@ -192,25 +597,205 @@
     body.intro-lock { overflow: hidden; }
     #portfolioApp { opacity: 1; transition: opacity .9s ease; }
     #portfolioApp.portfolio-hidden { display: none; }
-    #launchExperience { position: fixed; inset: 0; z-index: 9999; display: grid; place-items: center; padding: 22px; background: radial-gradient(ellipse at 50% 0%, #172638 0%, #090c12 58%); color: #edf2fa; overflow: auto; }
-    #launchExperience.done { opacity: 0; pointer-events: none; transition: opacity .8s ease; }
-    .launch-shell { width: min(100%, 980px); margin: auto; }
-    .launch-topline { display:flex; justify-content:space-between; gap:12px; align-items:center; color:#8291a5; font: .72rem var(--mono); margin-bottom:14px; letter-spacing:.04em; }
-    .launch-live { color:#8be28b; }
-    .launch-window { overflow:hidden; border:1px solid #2c394b; border-radius:15px; background:#0d121a; box-shadow:0 32px 100px rgba(0,0,0,.52); transform-origin:center; }
-    .launch-window-top { display:flex; align-items:center; justify-content:space-between; gap:12px; padding:13px 16px; background:#151c27; border-bottom:1px solid #263142; }
-    .launch-window-title { color:#c3cddd; font: .76rem var(--mono); }
-    .launch-code { padding:clamp(17px,4vw,35px); font:clamp(.68rem,1.35vw,.9rem)/2 var(--mono); min-height:300px; overflow:auto; }
-    .launch-code .ln { display:inline-block; width:30px; color:#506078; }
-    .launch-code .code-row { white-space:pre; }
-    .launch-bottom { display:flex; align-items:center; justify-content:space-between; gap:12px; flex-wrap:wrap; padding:14px 16px; border-top:1px solid #263142; background:#151c27; }
-    .launch-muted { color:#8291a5; font:.72rem var(--mono); }
-    .launch-btn { border:0; border-radius:8px; background:#8be28b; color:#071109; padding:11px 17px; font:600 .78rem var(--mono); cursor:pointer; transition:transform .2s, filter .2s; }
-    .launch-btn:hover { transform:translateY(-1px); filter:brightness(1.07); }
-    .launch-btn:disabled { opacity:.55; cursor:wait; }
-    .launch-btn.secondary { background:#1a2635; border:1px solid #344357; color:#eaf0f8; }
-    .launch-terminal { display:none; padding:20px; min-height:310px; background:#070a0f; font:.78rem/1.9 var(--mono); }
-    .launch-terminal.active { display:block; }
+
+/* IntelliJ Darcula-inspired portfolio launch */
+
+#launchExperience {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  display: grid;
+  place-items: center;
+  padding: 22px;
+
+  background:
+    radial-gradient(
+      ellipse at 50% 0%,
+      #292b30 0%,
+      #1e1f22 58%,
+      #18191c 100%
+    );
+
+  color: #dfe1e5;
+  overflow: auto;
+}
+
+#launchExperience.done {
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity .8s ease;
+}
+
+.launch-shell {
+  width: min(100%, 980px);
+  margin: auto;
+}
+
+.launch-topline {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  align-items: center;
+  color: #9da0a8;
+  font: .72rem var(--mono);
+  margin-bottom: 14px;
+  letter-spacing: .04em;
+}
+
+.launch-live {
+  color: #6aab73;
+}
+
+.launch-window {
+  overflow: hidden;
+  border: 1px solid #3c3f41;
+  border-radius: 10px;
+  background: #1e1f22;
+  box-shadow: 0 32px 100px rgba(0, 0, 0, .45);
+  transform-origin: center;
+}
+
+.launch-window-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 13px 16px;
+  background: #25262a;
+  border-bottom: 1px solid #3c3f41;
+}
+
+.launch-window-title {
+  color: #dfe1e5;
+  font: .76rem var(--mono);
+}
+
+.launch-code {
+  padding: clamp(17px, 4vw, 35px);
+  font: clamp(.68rem, 1.35vw, .9rem)/2 var(--mono);
+  min-height: 300px;
+  overflow: auto;
+  background: #1e1f22;
+  color: #a9b7c6;
+}
+
+.launch-code .ln {
+  display: inline-block;
+  width: 30px;
+  color: #606366;
+}
+
+.launch-code .code-row {
+  white-space: pre;
+}
+
+.launch-bottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  flex-wrap: wrap;
+  padding: 14px 16px;
+  border-top: 1px solid #3c3f41;
+  background: #25262a;
+}
+
+.launch-muted {
+  color: #9da0a8;
+  font: .72rem var(--mono);
+}
+
+.launch-btn {
+  border: 1px solid #589df6;
+  border-radius: 6px;
+  background: #589df6;
+  color: #1e1f22;
+  padding: 11px 17px;
+  font: 600 .78rem var(--mono);
+  cursor: pointer;
+  transition:
+    transform .2s,
+    filter .2s,
+    background .2s;
+}
+
+.launch-btn:hover {
+  transform: translateY(-1px);
+  filter: brightness(1.1);
+}
+
+.launch-btn:disabled {
+  opacity: .55;
+  cursor: wait;
+}
+
+.launch-btn.secondary {
+  background: #2b2d30;
+  border: 1px solid #4b4d50;
+  color: #dfe1e5;
+}
+
+.launch-btn.secondary:hover {
+  background: #36383c;
+  border-color: #589df6;
+}
+
+.launch-terminal {
+  display: none;
+  padding: 20px;
+  min-height: 310px;
+  background: #1e1f22;
+  color: #a9b7c6;
+  font: .78rem/1.9 var(--mono);
+}
+
+.launch-terminal.active {
+  display: block;
+}
+
+.launch-code .kw {
+  color: #cc7832;
+}
+
+.launch-code .type {
+  color: #a9b7c6;
+}
+
+.launch-code .fn {
+  color: #ffc66d;
+}
+
+.launch-code .ann {
+  color: #bbb529;
+}
+
+.launch-code .str {
+  color: #6a8759;
+}
+
+.launch-code .comment {
+  color: #808080;
+}
+
+@media (max-width: 600px) {
+  #launchExperience {
+    padding: 12px;
+  }
+
+  .launch-code {
+    min-height: 270px;
+  }
+
+  .launch-terminal {
+    padding: 14px;
+    min-height: 270px;
+  }
+
+  .launch-bottom {
+    align-items: flex-start;
+  }
+}
+ 
     .spring-mark { display:flex; justify-content:center; align-items:center; gap:18px; min-height:105px; margin-bottom:18px; }
     .spring-leaf { width:65px; height:65px; display:grid; place-items:center; border-radius:20px; background:linear-gradient(145deg,#75c943,#3a8e36); color:white; font-size:2.1rem; font-weight:800; transform:rotate(-7deg); box-shadow:0 0 42px #52bd4c42; }
     .spring-word { font-size:clamp(1.7rem,5vw,2.7rem); font-weight:800; letter-spacing:-.06em; }
@@ -309,166 +894,86 @@
           <p>Hey, I'm <strong>Ayush Shah</strong> — a computer science student focused on building secure REST APIs, practical backend systems, and Spring Boot microservices.</p>
           <div class="hero-actions">
             <a class="btn btn-primary" href="#projects">Explore my work <span aria-hidden="true">↘</span></a>
-            <a class="btn btn-secondary" href="Ayush_Shah_Resume.pdf
-              
-              
-              
-              
-              
-              
-              
-              
-              
-              
-              
-              
-              
-              
-              
-              
-              
-              
-              
-              
-              
-              
-              
-              
-              
-              
-              
-              
-              
-              
-              
-              
-              
-              
-              
-              
-              
-              
-              
-              
-              
-              
-              
-              
-              
-              
-              
-              
-              
-              
-              
-              
-              
-              
-              
-              
-              
-              
-              
-              
-              
-              
-              
-              
-              
-              
-              
-              
-              
-              
-              
-              
-              
-              
-              
-              
-              
-              
-              
-              
-              
-              
-              
-              
-              
-              
-              
-              
-              
-              
-              
-              
-              
-              
-              
-              
-              
-              
-              
-              
-              
-              
-              
-              
-              
-              
-              
-              
-              
-              
-              
-              
-              
-              
-              
-              
-              
-              
-              
-              
-              
-              
-              
-              
-              
-              
-              
-              
-              
-              
-              
-              
-              
-              
-              
-              
-              
-              
-              
-              
-              
-              
-              
-              
-              
-              
-              
-              
-              
-              
-              
-              
-              
-              
-              
-              
-              
-              
-              
+
+<a
+  class="btn btn-secondary"
+  href="Ayush_Shah_Resume.pdf"
+  target="_blank"
+  rel="noopener noreferrer"
+>
+  View resume ↗
+</a>
+              
+          
+<aside class="hero-socials" aria-label="Social profiles">
+  <div class="social-heading">
+    <div class="eyebrow">Let's connect</div>
+    <h2>Find me around the web.</h2>
+    <p>Explore my code, connect professionally, or drop me an email.</p>
+  </div>
+
+  <a
+    class="social-card"
+    href="https://github.com/ayushah08"
+    target="_blank"
+    rel="noopener noreferrer"
+    aria-label="Visit my GitHub profile"
+  >
+    <span class="social-icon">
+      <svg viewBox="0 0 24 24" fill="currentColor"
+           aria-hidden="true">
+        <path d="M12 .9a11.1 11.1 0 0 0-3.51 21.63c.55.1.76-.24.76-.54v-2.08c-3.1.67-3.76-1.32-3.76-1.32-.5-1.29-1.24-1.63-1.24-1.63-1.01-.69.08-.68.08-.68 1.12.08 1.71 1.15 1.71 1.15 1 .1.76 2.27 3.6 1.6.1-.72.39-1.21.7-1.49-2.47-.28-5.07-1.24-5.07-5.5 0-1.22.44-2.21 1.15-2.99-.12-.28-.5-1.42.11-2.95 0 0 .94-.3 3.05 1.14a10.6 10.6 0 0 1 5.56 0c2.11-1.44 3.05-1.14 3.05-1.14.61 1.53.23 2.67.11 2.95.72.78 1.15 1.77 1.15 2.99 0 4.27-2.6 5.22-5.08 5.5.4.35.75 1.02.75 2.06v3.04c0 .3.2.65.77.54A11.1 11.1 0 0 0 12 .9Z"/>
+      </svg>
+    </span>
+    <span class="social-info">
+      <strong>GitHub</strong>
+      <span>Explore my repositories</span>
+    </span>
+    <span class="social-arrow" aria-hidden="true">↗</span>
+  </a>
+
+  <a
+    class="social-card"
+    href="https://www.linkedin.com/in/ayush-shah-962ab92b6"
+    target="_blank"
+    rel="noopener noreferrer"
+    aria-label="Connect with me on LinkedIn"
+  >
+    <span class="social-icon">
+      <svg viewBox="0 0 24 24" fill="currentColor"
+           aria-hidden="true">
+        <path d="M20.45 2H3.55C2.69 2 2 2.68 2 3.53v16.94c0 .85.69 1.53 1.55 1.53h16.9c.86 0 1.55-.68 1.55-1.53V3.53c0-.85-.69-1.53-1.55-1.53ZM7.93 18.46H4.97V9h2.96v9.46ZM6.45 7.71a1.71 1.71 0 1 1 .02-3.42 1.71 1.71 0 0 1-.02 3.42Zm12.01 10.75H15.5v-4.6c0-1.1-.02-2.52-1.54-2.52-1.55 0-1.79 1.2-1.79 2.44v4.68H9.21V9h2.84v1.29h.04c.4-.75 1.36-1.54 2.8-1.54 3 0 3.57 1.97 3.57 4.53v5.18Z"/>
+      </svg>
+    </span>
+    <span class="social-info">
+      <strong>LinkedIn</strong>
+      <span>Let's connect professionally</span>
+    </span>
+    <span class="social-arrow" aria-hidden="true">↗</span>
+  </a>
+
+  <a
+    class="social-card"
+    href="mailto:ayushah810@yahoo.com"
+    aria-label="Send me an email"
+  >
+    <span class="social-icon">
+      <svg viewBox="0 0 24 24" fill="none"
+           stroke="currentColor" stroke-width="1.7"
+           stroke-linecap="round" stroke-linejoin="round"
+           aria-hidden="true">
+        <rect x="3" y="5" width="18" height="14" rx="2"/>
+        <path d="m3 7 9 6 9-6"/>
+      </svg>
+    </span>
+    <span class="social-info">
+      <strong>Email</strong>
+      <span>ayushah810@yahoo.com</span>
+    </span>
+    <span class="social-arrow" aria-hidden="true">↗</span>
+  </a>
+</aside>
+
               " target="_blank" rel="noopener">View resume ↗</a>
           </div>
           <div class="micro-proof"><span>Java & Spring Boot</span><span>REST APIs</span><span>Microservices</span></div>
